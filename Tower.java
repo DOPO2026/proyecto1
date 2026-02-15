@@ -7,16 +7,18 @@ import java.util.ArrayList;
  */
 public class Tower {
     private int width;
-    private int maxHeight;
+    private int height;
     private boolean isVisible;
     private ArrayList<Cup> cups; 
+    private int currentTopY;
     /**
      * Constructor
      */
     public Tower(int width, int maxHeight) {
         this.width = width;
-        this.maxHeight = maxHeight;
+        this.height = maxHeight;
         this.cups = new ArrayList<>();
+        currentTopY=300;
         this.isVisible = false;
     }
     /**
@@ -36,4 +38,17 @@ public class Tower {
         cups.add(c1);
         if (isVisible) c1.makeVisible();
     }
+    /**
+     * add a new cup
+     */
+    public void addCup(int size, String color) {
+        Cup newCup = new Cup(size, color);
+        currentTopY = currentTopY - newCup.getHeight();
+        newCup.move(150, currentTopY);
+        cups.add(newCup); 
+        newCup.makeVisible();
+    }
+    public int getHeight() {
+    return this.height;
+    }   
 }
