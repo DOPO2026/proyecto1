@@ -1,0 +1,90 @@
+1. ¿Cuáles fueron los mini-ciclos definidos? Justifíquenlos.
+
+Mini-Ciclo 1: Fundamentos y Representación Visual
+Objetivo: Configurar el entorno y lograr que los objetos básicos existan y se dibujen.
+
+Tareas:
+
+Crear el proyecto en BlueJ y asegurar la integración del paquete shapes.
+
+Crear las clases Cup y Lid.
+
+Implementar el constructor de Tower y el método de visibilidad (makeVisible).
+
+Hito: Poder instanciar una torre vacía y ver el lienzo (Canvas) en pantalla.
+
+
+Justificación: Cumple con el requisito de reutilización de shapes  y establece la base visual (Requisito 8 y 9) antes de meterse en la lógica compleja.
+
+Mini-Ciclo 2: Lógica de Apilamiento (Core Logic)
+Objetivo: Permitir que la torre crezca y decrezca (Push y Pop básico).
+
+Tareas:
+
+Implementar pushCup(i) y pushLid(i). Aquí debes validar que solo exista una taza/tapa por número.
+
+Implementar la lógica visual para que al apilar, el objeto nuevo aparezca encima del anterior (cálculo de coordenadas Y). Recuerda que las tapas miden 1 cm.
+
+Implementar popCup() y popLid()  para eliminar el tope.
+
+Implementar height() para consultar la altura actual.
+
+
+Justificación: Aborda los Requisitos Funcionales 1, 2, 3 y 6. Es el núcleo del simulador.
+
+Mini-Ciclo 3: Manipulación Compleja y Ordenamiento
+Objetivo: Implementar las operaciones de conjunto y reglas de negocio estrictas.
+
+Tareas:
+
+Implementar removeCup(i) y removeLid(i). Esto es más complejo que un pop porque implica sacar algo de en medio de la estructura.
+
+
+Implementar orderTower(). Requiere un algoritmo de ordenamiento (burbuja o sort de Java) de mayor a menor.
+
+
+Implementar reverseTower().
+
+
+Regla Crítica: Asegurar que si una taza tiene tapa, se muevan juntas al ordenar.
+
+
+Justificación: Cubre los requisitos más algorítmicos (4 y 5). Aquí es donde tu experiencia en competitive programming te será útil para optimizar el ordenamiento.
+
+Mini-Ciclo 4: Reportes, Usabilidad y Pulido Final
+Objetivo: Consultas de información y detalles estéticos obligatorios.
+
+Tareas:
+
+Implementar lidedCups() y stackingItems()  para retornar las estructuras de datos solicitadas (arrays y matrices de Strings).
+
+Asegurar los colores: Tazas diferentes colores , tapas mismo color que su taza.
+
+Añadir marcadores de altura visuales en la torre.
+
+Manejo de errores con JOptionPane si el simulador es visible.
+
+
+Justificación: Cumple los requisitos de consulta (Requisito 7) y todos los requisitos de usabilidad
+
+
+2. ¿Cuál es el estado actual del proyecto en términos de mini-ciclos? ¿por qué?
+El primer miniCiclo se encuentra terminado, porque definimos las clases Tower, Cup y Lid.
+
+3. ¿Cuál fue el tiempo total invertido por cada uno de ustedes? (Horas/Hombre)
+3 horas cada uno.
+
+4. ¿Cuál consideran fue el mayor logro? ¿Por qué?
+Aprender a trabajar coperativamente en github.
+
+5. ¿Cuál consideran que fue el mayor problema técnico? ¿Qué hicieron para resolverlo?
+Entender bien el ejericio, lo que hicimos para solucionarlo fue apoyarnos del video en moodle y de la IA.
+
+6. ¿Qué hicieron bien como equipo? ¿Qué se comprometen a hacer para mejorar los resultados?}
+Nos esforzamos en crear un espacio de trabajo profesional. Adelantar trabajo con más tiempo.
+
+7. Considerando las prácticas XP incluidas en los laboratorios. ¿cuál fue la más útil? ¿por qué?
+Planning, porque los miniciclos nos ayudaron a resolver paso a paso los problemas.
+
+8. ¿Qué referencias usaron? ¿Cuál fue la más útil? Incluyan citas con estándares adecuados.
+El video y el API de Java.
