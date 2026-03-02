@@ -1,9 +1,12 @@
 #BlueJ class context
 comment0.target=Lid
 comment0.text=\r\n\ Write\ a\ description\ of\ class\ Lid\ here.\r\n\r\n\ @Rodriguez-Villamizar\r\n\ @1\ (15/02/2026)\r\n
-comment1.params=size\ color
+comment1.params=number\ color
 comment1.target=Lid(int,\ java.lang.String)
 comment2.params=
-comment2.target=void\ makeVisible()
-comment2.text=\r\n\ Make\ the\ lid\ visible.\ If\ it\ was\ already\ visible,\ do\ nothing.\r\n
-numComments=3
+comment2.target=int\ getNumber()
+comment3.params=
+comment3.target=void\ makeVisible()
+comment4.params=
+comment4.target=void\ makeInvisible()
+numComments=5

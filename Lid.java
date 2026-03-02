@@ -6,23 +6,25 @@
  * @1 (15/02/2026)
  */
 public class Lid {
-    private int nCup; 
-    private Rectangle view;
-    private static final int SCALE = 20;
+    private int number;
+    private Rectangle figure;
 
-    public Lid(int size, String color) {
-        this.nCup = nCup;
-        int height = 1 * SCALE;
-        int width = (nCup * 10) + 40;        
-        view = new Rectangle();
-        view.changeColor(color);
-        view.changeSize(height, width);
-        }
-    /**
-     * Make the lid visible. If it was already visible, do nothing.
-     */
+    public Lid(int number, String color) {
+        this.number = number;
+        this.figure = new Rectangle();
+        this.figure.changeSize(10, 40);
+        this.figure.changeColor(color);
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
     public void makeVisible() {
-        view.makeVisible();
-        }
+        figure.makeVisible();
+    }
 
+    public void makeInvisible() {
+        figure.makeInvisible();
+    }
 }
