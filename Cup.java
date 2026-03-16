@@ -14,6 +14,8 @@ public class Cup extends StackItem {
     private String color;
     private boolean isVisible;
     private static final int SCALE=20;
+    
+    private boolean isCovered; //ciclo 2
 
     /**
      * Constructor for objects of class Cup
@@ -26,7 +28,10 @@ public class Cup extends StackItem {
         this.height = (2*nCup-1) *SCALE;
         this.width = (nCup*10)+30;
         this.color = color;
-        this.isVisible=false;
+        this.isVisible = false;
+        
+        this.isCovered = false;
+        
         view= new Rectangle();
         view.changeColor(color);
         view.changeSize(this.height,this.width);
@@ -34,10 +39,17 @@ public class Cup extends StackItem {
     public int getHeight() {
         return this.height;
     }
+    
     public void move(int x, int y) {
         this.x = x;
         this.y = y;
+        
+        if (view != null) {
+            view.moveHorizontal(x - 70);
+            view.moveVertical(y - 15);
+        }
     }
+    
     /**
      * Make the cup visible. If it was already visible, do nothing.
      */
@@ -51,5 +63,32 @@ public class Cup extends StackItem {
     public void makeInvisible() {
         isVisible = false;
         view.makeInvisible();
+    }
+    
+    /**
+     * Retorna si la taza está tapada o no.
+     */
+    public boolean isCovered() {
+        return this.isCovered;
+    }
+
+    /**
+     * Tapa la taza y cambia su color visual para cumplir con el requisito de usabilidad.
+     */
+    public void cover() {
+        this.isCovered = true;
+        if (view != null) {
+            view.changeColor("gray"); 
+        }
+    }
+
+    /**
+     * Destapa la taza y restaura su color original.
+     */
+    public void uncover() {
+        this.isCovered = false;
+        if (view != null) {
+            view.changeColor(this.color);
+        }
     }
 }

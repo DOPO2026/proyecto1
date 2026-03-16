@@ -24,15 +24,34 @@ public class Tower {
         this.ok = true;
     }
 
+    /**
+     * Constructor del Ciclo 2: Crea una torre automáticamente con 'cups' cantidad de tazas.
+     */
+    public Tower(int cups) {
+        // Valores por defecto para ancho y alto máxima
+        this.width = 100; 
+        this.maxHeight = 50; 
+        this.items = new ArrayList<>();
+        this.isVisible = false;
+        this.ok = true;
+        
+        // Creamos las tazas automáticamente desde 1 hasta la cantidad deseada
+        for (int i = 1; i <= cups; i++) {
+            pushCup(i); // Reutilizamos el método que ya tienes para crear tazas
+        }
+    }
+
     public void pushCup(int i) {
         if (!containsItem("cup", i)) {
             String[] colores = {"red", "yellow", "blue", "green", "magenta", "black"};
             String color = colores[i % colores.length];
             
             Cup nuevaTaza = new Cup(i, color);
+            items.add(nuevaTaza);   
             if (isVisible) nuevaTaza.makeVisible();
 
             ok = true;
+            updateDisplay();
         } else {
             ok = false;
             showError("La taza " + i + " ya existe en la torre.");
@@ -78,10 +97,12 @@ public class Tower {
 
             // Ahora creamos una Lid (que es un StackItem)
             Lid nuevaTapa = new Lid(i, color);
+            items.add(nuevaTapa);
             if (isVisible) nuevaTapa.makeVisible();
 
 
             ok = true;
+            updateDisplay();
         } else {
             ok = false;
             showError("La tapa " + i + " ya existe en la torre.");
@@ -128,32 +149,70 @@ public class Tower {
         updateDisplay();
     }
 
+    /**
+     * Calcula la altura total de la torre usando la fórmula exacta del Problema J.
+     */
     public int height() {
-        int totalHeight = 0;
-        // La lógica de anidación (Problem J) debe aplicarse aquí si se requiere físicamente.
-        // Por ahora suma las alturas individuales: tazas (2i-1) y tapas (1)
-        for (StackItem item : items) {
-            if (item.type.equals("cup")) {
-                totalHeight += (2 * item.number - 1);
-            } else if (item.type.equals("lid")) {
-                totalHeight += 1;
+        if (items.isEmpty()) return 0;
+        
+        int[] baseY = new int[items.size()];
+        int maxHeight = 0;
+        
+        for (int i = 0; i < items.size(); i++) {
+            StackItem current = items.get(i);
+            int currentBaseY = 0; // Por defecto cae hasta el suelo (0)
+            
+            // Comparamos la pieza actual con TODAS las que están debajo de ella
+            for (int j = 0; j < i; j++) {
+                StackItem previous = items.get(j);
+                int interactionY = 0;
+                
+                if (current.getType().equals("cup") && previous.getType().equals("cup")) {
+                    if (current.getNumber() < previous.getNumber()) {
+                        // Cabe dentro: se apoya en el fondo interior (1 cm = 20 px)
+                        interactionY = baseY[j] + 20; 
+                    } else {
+                        // No cabe: se apoya en el borde superior de la taza
+                        interactionY = baseY[j] + previous.getHeight();
+                    }
+                } else {
+                    // Para tapas, nada entra en ellas y ellas no entran en nada
+                    interactionY = baseY[j] + previous.getHeight();
+                }
+                
+                // La pieza se detiene en la restricción más alta que encuentre
+                if (interactionY > currentBaseY) {
+                    currentBaseY = interactionY;
+                }
+            }
+            
+            baseY[i] = currentBaseY;
+            int currentTopY = currentBaseY + current.getHeight();
+            
+            // Evaluamos si esta pieza coronó la torre como la más alta
+            if (currentTopY > maxHeight) {
+                maxHeight = currentTopY;
             }
         }
+        
         ok = true;
-        return totalHeight;
+        return maxHeight;
     }
 
     public int[] lidedCups() {
         List<Integer> lided = new ArrayList<>();
-        // Revisa si una tapa está inmediatamente después de su taza correspondiente
-        for (int j = 0; j < items.size() - 1; j++) {
-            StackItem current = items.get(j);
-            StackItem next = items.get(j + 1);
-            if (current.type.equals("cup") && next.type.equals("lid") && current.number == next.number) {
-                lided.add(current.number);
+        
+        // Revisamos cuáles tazas tienen el estado de tapadas
+        for (StackItem item : items) {
+            if (item.getType().equals("cup")) {
+                Cup cup = (Cup) item;
+                if (cup.isCovered()) {
+                    lided.add(cup.getNumber());
+                }
             }
         }
-        Collections.sort(lided); // Ordenados de menor a mayor [cite: 107]
+        
+        Collections.sort(lided); // Ordenados de menor a mayor
         ok = true;
         return lided.stream().mapToInt(i -> i).toArray();
     }
@@ -177,8 +236,14 @@ public class Tower {
 
         this.isVisible = true;
         drawHeightMarks(); 
-        ok = true;
+        
+        for (StackItem item : items) {
+            item.makeVisible();
         }
+        
+        ok = true;
+        updateDisplay();
+    }   
 
     public void makelnvisible() { // Se mantiene el nombre exacto del requerimiento [cite: 101]
         this.isVisible = false;
@@ -210,7 +275,10 @@ public class Tower {
 
     private void updateDisplay() {
         if (!isVisible) return;
-     
+        
+        for (StackItem item : items) {
+            item.makeVisible();
+        }
     }
     
     private void drawHeightMarks() {
@@ -230,6 +298,90 @@ public class Tower {
             marca.makeVisible();
         }
     }
+
+    /**
+     * Intercambia las posiciones de dos elementos en la torre.
+     */
+    public void swap(String type1, int no1, String type2, int no2) {
+        int index1 = -1; 
+        int index2 = -1;
+        
+        for (int i = 0; i < items.size(); i++) {
+            StackItem item = items.get(i);
+            
+            if (item.getType().equals(type1) && item.getNumber() == no1) {
+                index1 = i;
+            }
+            
+            if (item.getType().equals(type2) && item.getNumber() == no2) {
+                index2 = i;
+            }
+        }
+        
+        if (index1 != -1 && index2 != -1) {
+            Collections.swap(items, index1, index2); // Esta herramienta de Java hace el intercambio
+            ok = true;
+            updateDisplay();
+        } else {
+            ok = false;
+            showError("No se pudieron encontrar ambos elementos (" + type1 + " " + no1 + " y " + type2 + " " + no2 + ") para intercambiar.");
+        }
+    }
     
+    /**
+     * Busca qué tazas tienen su respectiva tapa en la torre y las marca como tapadas.
+     */
+    public void cover() {
+        for (StackItem item : items) {
+            if (item.getType().equals("cup")) {
+                Cup cup = (Cup) item; // Hacemos un cast (conversión) a Cup
+                // Verificamos si existe una tapa con el mismo número en la torre
+                if (containsItem("lid", cup.getNumber())) {
+                    cup.cover();
+                }
+            }
+        }
+        ok = true;
+        updateDisplay();
+    }
+    
+    /**
+     * Sugiere un intercambio que reduzca la altura total de la torre.
+     * Retorna un arreglo con [tipo1, numero1, tipo2, numero2].
+     */
+    public String[] swapToReduce() {
+        int currentHeight = height();
+        
+        for (int i = 0; i < items.size(); i++) {
+            for (int j = i + 1; j < items.size(); j++) {
+                // Intercambiamos temporalmente las posiciones
+                Collections.swap(items, i, j);
+                
+                // Calculamos la nueva altura
+                int newHeight = height();
+                
+                // Si la altura disminuye, encontramos una solución
+                if (newHeight < currentHeight) {
+                    StackItem originalI = items.get(j); // Tras el swap, el original de 'i' está en 'j'
+                    StackItem originalJ = items.get(i);
+                    
+                    // Revertimos el intercambio para no afectar la torre real
+                    Collections.swap(items, i, j);
+                    
+                    ok = true;
+                    return new String[]{
+                        originalI.type, String.valueOf(originalI.number), 
+                        originalJ.type, String.valueOf(originalJ.number)
+                    };
+                }
+                
+                // Si no disminuye, revertimos el intercambio y seguimos probando
+                Collections.swap(items, i, j);
+            }
+        }
+        
+        ok = false;
+        return new String[]{}; // Retorna vacío si ningún intercambio reduce la altura
+    }
 
 }

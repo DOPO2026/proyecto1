@@ -6,7 +6,6 @@
  */
 public class Lid extends StackItem {
 
-    private int number;
     private Rectangle figure;
 
     public Lid(int number, String color) {
