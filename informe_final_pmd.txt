@@ -1,0 +1,60 @@
+.\test\TowerATest.java:22:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC2Test.java:35:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:17:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:28:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:35:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:45:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:45:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:53:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:62:	OneDeclarationPerLine:	Use one line for each declaration, it enhances code readability.
+.\test\TowerC4Test.java:64:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:64:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:65:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:65:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:66:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:66:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:73:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:86:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:93:	OneDeclarationPerLine:	Use one line for each declaration, it enhances code readability.
+.\test\TowerC4Test.java:95:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:95:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:96:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:96:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:102:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:111:	OneDeclarationPerLine:	Use one line for each declaration, it enhances code readability.
+.\test\TowerC4Test.java:113:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:113:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:114:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:114:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:120:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:132:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:182:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:210:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:219:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:228:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:241:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:241:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:242:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:242:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:249:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:263:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:263:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:264:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:264:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerCC4Test.java:17:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerCC4Test.java:38:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerCC4Test.java:46:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerCC4Test.java:68:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerCC4Test.java:78:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerCC4Test.java:80:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerContestTest.java:16:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:31:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:42:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:53:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:60:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:67:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:74:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:92:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:96:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerContestTest.java:115:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\TowerContest.java:80:	UseVarargs:	Consider using varargs for methods or constructors which take an array the last parameter.

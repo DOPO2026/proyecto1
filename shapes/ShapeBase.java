@@ -3,8 +3,7 @@ package shapes;
 /**
  * Clase abstracta que define el comportamiento comun de todas las figuras.
  * Refactorizacion del paquete shapes aprovechando herencia.
- * 
- * @author Rodriguez-Villamizar
+ * * @author Rodriguez-Villamizar
  * @version Ciclo 4
  */
 public abstract class ShapeBase {
@@ -94,13 +93,17 @@ public abstract class ShapeBase {
      */
     public void slowMoveHorizontal(int distance) {
         int delta;
+        // Corrección PMD: Creamos una nueva variable en lugar de reasignar 'distance'
+        int totalDistance; 
+        
         if (distance < 0) {
             delta = -1;
-            distance = -distance;
+            totalDistance = -distance;
         } else {
             delta = 1;
+            totalDistance = distance;
         }
-        for (int i = 0; i < distance; i++) {
+        for (int i = 0; i < totalDistance; i++) {
             xPosition += delta;
             draw();
         }
@@ -112,13 +115,17 @@ public abstract class ShapeBase {
      */
     public void slowMoveVertical(int distance) {
         int delta;
+        // Corrección PMD: Creamos una nueva variable en lugar de reasignar 'distance'
+        int totalDistance;
+        
         if (distance < 0) {
             delta = -1;
-            distance = -distance;
+            totalDistance = -distance;
         } else {
             delta = 1;
+            totalDistance = distance;
         }
-        for (int i = 0; i < distance; i++) {
+        for (int i = 0; i < totalDistance; i++) {
             yPosition += delta;
             draw();
         }

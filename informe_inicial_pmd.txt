@@ -1,0 +1,96 @@
+.\shapes\Canvas.java:46:	LooseCoupling:	Avoid using implementation types like 'HashMap'; use the interface instead
+.\shapes\Canvas.java:119:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\shapes\Canvas.java:121:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\shapes\Canvas.java:123:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\shapes\Canvas.java:125:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\shapes\Canvas.java:127:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\shapes\Canvas.java:129:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\shapes\Canvas.java:131:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\shapes\Canvas.java:156:	ForLoopCanBeForeach:	This for loop can be replaced by a foreach loop
+.\shapes\Canvas.java:180:	MissingOverride:	The method 'paint(Graphics)' is missing an @Override annotation.
+.\shapes\ShapeBase.java:99:	AvoidReassigningParameters:	Avoid reassigning parameters such as 'distance'
+.\shapes\ShapeBase.java:117:	AvoidReassigningParameters:	Avoid reassigning parameters such as 'distance'
+.\test\TowerATest.java:22:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC2Test.java:35:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:17:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:28:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:35:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:45:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:45:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:53:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:62:	OneDeclarationPerLine:	Use one line for each declaration, it enhances code readability.
+.\test\TowerC4Test.java:64:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:64:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:65:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:65:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:66:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:66:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:73:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:86:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:93:	OneDeclarationPerLine:	Use one line for each declaration, it enhances code readability.
+.\test\TowerC4Test.java:95:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:95:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:96:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:96:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:102:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:111:	OneDeclarationPerLine:	Use one line for each declaration, it enhances code readability.
+.\test\TowerC4Test.java:113:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:113:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:114:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:114:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:120:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:132:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:182:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:210:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:219:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:228:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:241:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:241:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:242:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:242:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:249:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerC4Test.java:263:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:263:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:264:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerC4Test.java:264:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerCC4Test.java:17:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerCC4Test.java:38:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerCC4Test.java:46:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerCC4Test.java:68:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerCC4Test.java:78:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerCC4Test.java:80:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerContestTest.java:16:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:31:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:42:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:53:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:60:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:67:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:74:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:92:	UnitTestContainsTooManyAsserts:	Unit tests should not contain more than 1 assert(s).
+.\test\TowerContestTest.java:96:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\test\TowerContestTest.java:115:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:13:	UnusedPrivateField:	Avoid unused private fields such as 'width'.
+.\tower\Tower.java:108:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:143:	UnusedLocalVariable:	Avoid unused local variables such as 'cupIndex'.
+.\tower\Tower.java:147:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:164:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:190:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:266:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:287:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:315:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:315:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:316:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:316:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:345:	UnusedAssignment:	The initializer for variable 'interactionY' is never used (overwritten on lines 350, 353 and 356)
+.\tower\Tower.java:347:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:347:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:381:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:448:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:483:	UnusedAssignment:	The initializer for variable 'interactionY' is never used (overwritten on lines 487, 489 and 492)
+.\tower\Tower.java:485:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:485:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:530:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\Tower.java:560:	UseVarargs:	Consider using varargs for methods or constructors which take an array the last parameter.
+.\tower\Tower.java:596:	LiteralsFirstInComparisons:	Position literals first in String comparisons
+.\tower\TowerContest.java:75:	UseVarargs:	Consider using varargs for methods or constructors which take an array the last parameter.
+.\tower\TowerContest.java:114:	LiteralsFirstInComparisons:	Position literals first in String comparisons

@@ -21,21 +21,21 @@ public class Canvas{
     // is done on purpose to keep the interface and instance fields of the
     // shape objects in this project clean and simple for educational purposes.
 
-	private static Canvas canvasSingleton;
+    private static Canvas canvasSingleton;
 
-	/**
-	 * Factory method to get the canvas singleton object.
-	 */
-	public static Canvas getCanvas(){
-		if(canvasSingleton == null) {
-			canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, 
-										 Color.white);
-		}
-		canvasSingleton.setVisible(true);
-		return canvasSingleton;
-	}
+    /**
+     * Factory method to get the canvas singleton object.
+     */
+    public static Canvas getCanvas(){
+        if(canvasSingleton == null) {
+            canvasSingleton = new Canvas("BlueJ Shapes Demo", 300, 300, 
+                                         Color.white);
+        }
+        canvasSingleton.setVisible(true);
+        return canvasSingleton;
+    }
 
-	//  ----- instance part -----
+    //  ----- instance part -----
 
     private JFrame frame;
     private CanvasPane canvas;
@@ -43,14 +43,16 @@ public class Canvas{
     private Color backgroundColour;
     private Image canvasImage;
     private List <Object> objects;
-    private HashMap <Object,ShapeDescription> shapes;
+    
+    // Corrección PMD: LooseCoupling (Usar la interfaz Map en lugar de la implementación HashMap)
+    private Map <Object,ShapeDescription> shapes;
     
     /**
      * Create a Canvas.
      * @param title  title to appear in Canvas Frame
      * @param width  the desired width for the canvas
      * @param height  the desired height for the canvas
-     * @param bgClour  the desired background colour of the canvas
+     * @param bgColour  the desired background colour of the canvas
      */
     private Canvas(String title, int width, int height, Color bgColour){
         frame = new JFrame();
@@ -95,10 +97,10 @@ public class Canvas{
      // objects. It is carefully designed to keep the visible shape interfaces
      // in this project clean and simple for educational purposes.
     public void draw(Object referenceObject, String color, Shape shape){
-    	objects.remove(referenceObject);   // just in case it was already there
-    	objects.add(referenceObject);      // add at the end
-    	shapes.put(referenceObject, new ShapeDescription(shape, color));
-    	redraw();
+        objects.remove(referenceObject);   // just in case it was already there
+        objects.add(referenceObject);      // add at the end
+        shapes.put(referenceObject, new ShapeDescription(shape, color));
+        redraw();
     }
  
     /**
@@ -106,32 +108,33 @@ public class Canvas{
      * @param  referenceObject  the shape object to be erased 
      */
     public void erase(Object referenceObject){
-    	objects.remove(referenceObject);   // just in case it was already there
-    	shapes.remove(referenceObject);
-    	redraw();
+        objects.remove(referenceObject);   // just in case it was already there
+        shapes.remove(referenceObject);
+        redraw();
     }
 
     /**
      * Set the foreground colour of the Canvas.
-     * @param  newColour   the new colour for the foreground of the Canvas 
+     * @param  colorString   the new colour for the foreground of the Canvas 
      */
     public void setForegroundColor(String colorString){
-		if(colorString.equals("red"))
-			graphic.setColor(Color.red);
-		else if(colorString.equals("black"))
-			graphic.setColor(Color.black);
-		else if(colorString.equals("blue"))
-			graphic.setColor(Color.blue);
-		else if(colorString.equals("yellow"))
-			graphic.setColor(Color.yellow);
-		else if(colorString.equals("green"))
-			graphic.setColor(Color.green);
-		else if(colorString.equals("magenta"))
-			graphic.setColor(Color.magenta);
-		else if(colorString.equals("white"))
-			graphic.setColor(Color.white);
-		else
-			graphic.setColor(Color.black);
+        // Corrección PMD: LiteralsFirstInComparisons
+        if("red".equals(colorString))
+            graphic.setColor(Color.red);
+        else if("black".equals(colorString))
+            graphic.setColor(Color.black);
+        else if("blue".equals(colorString))
+            graphic.setColor(Color.blue);
+        else if("yellow".equals(colorString))
+            graphic.setColor(Color.yellow);
+        else if("green".equals(colorString))
+            graphic.setColor(Color.green);
+        else if("magenta".equals(colorString))
+            graphic.setColor(Color.magenta);
+        else if("white".equals(colorString))
+            graphic.setColor(Color.white);
+        else
+            graphic.setColor(Color.black);
     }
 
     /**
@@ -148,13 +151,14 @@ public class Canvas{
         }
     }
 
-	/**
-	 * Redraw ell shapes currently on the Canvas.
-	 */
-	private void redraw(){
-		erase();
-		for(Iterator i=objects.iterator(); i.hasNext(); ) {
-                       shapes.get(i.next()).draw(graphic);
+    /**
+     * Redraw ell shapes currently on the Canvas.
+     */
+    private void redraw(){
+        erase();
+        // Corrección PMD: ForLoopCanBeForeach
+        for(Object obj : objects) {
+            shapes.get(obj).draw(graphic);
         }
         canvas.repaint();
     }
@@ -171,36 +175,32 @@ public class Canvas{
     }
 
 
-    /************************************************************************
-     * Inner class CanvasPane - the actual canvas component contained in the
-     * Canvas frame. This is essentially a JPanel with added capability to
-     * refresh the image drawn on it.
-     */
+    // Inner class CanvasPane - the actual canvas component contained in the
+    // Canvas frame. This is essentially a JPanel with added capability to
+    // refresh the image drawn on it.
     private class CanvasPane extends JPanel{
+        // Corrección PMD: MissingOverride
+        @Override
         public void paint(Graphics g){
             g.drawImage(canvasImage, 0, 0, null);
         }
     }
     
-    /************************************************************************
-     * Inner class CanvasPane - the actual canvas component contained in the
-     * Canvas frame. This is essentially a JPanel with added capability to
-     * refresh the image drawn on it.
-     */
+    // Inner class ShapeDescription - keeping track of a shape and its color.
     private class ShapeDescription{
-    	private Shape shape;
-    	private String colorString;
+        private Shape shape;
+        private String colorString;
 
-		public ShapeDescription(Shape shape, String color){
-    		this.shape = shape;
-    		colorString = color;
-    	}
+        public ShapeDescription(Shape shape, String color){
+            this.shape = shape;
+            colorString = color;
+        }
 
-		public void draw(Graphics2D graphic){
-			setForegroundColor(colorString);
-			graphic.draw(shape);
-			graphic.fill(shape);
-		}
+        public void draw(Graphics2D graphic){
+            setForegroundColor(colorString);
+            graphic.draw(shape);
+            graphic.fill(shape);
+        }
     }
 
 }
