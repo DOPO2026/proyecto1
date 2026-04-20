@@ -17,12 +17,12 @@ decisiones tomadas y el resultado final alcanzado.
 ## 2. Resultado Inicial
 Resultado general:
 - Al  ejecutar  todas  las  clases  de  prueba  existentes  (TowerC2Test,  TowerContestTest,
-TowerC4Test,  TowerATest,  TowerCC4Test)  sobre  el  proyecto,  se  obtuvo  el  siguiente
+TowerC4Test,  TowerATest,  TowerCC4Test)  sobre  el  proyecto,  se  obtuvo  el  siguiente resultado inicial:
 
 ![Captura](Picture1.png)
 
 ## Análisis:
-## Total: 90.4%
+Total: 90.4%
 Instrucciones cubiertas: 4,463 de 4,936
 Instrucciones no cubiertas: 473
 
