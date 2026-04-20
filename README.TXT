@@ -28,7 +28,10 @@ Durante el ciclo de refactoring y migración a Eclipse, se llevaron a cabo los s
 
 - Análisis Dinámico: Se logró un porcentaje de cobertura total final de 94.2% frente al 90.4% inicial, superando la meta establecida del 75%. Para lograr este incremento, se diseñaron e implementaron nuevas pruebas unitarias enfocadas en evaluar rutas de código que inicialmente no eran alcanzadas. Esto permitió elevar la cobertura de la clase principal Tower del 86.7% al 97.8%.
   
-- Análisis Estático:
+- Análisis Estático: Se aplicó análisis estático con PMD 7.23.0, eliminando el 100% de las advertencias de prioridad alta en el dominio. La refactorización se centró en:
+    - Seguridad: Prevención de NullPointerException.
+    - Diseño: Desacoplamiento mediante el uso de interfaces.
+    - Eficiencia: Eliminación de código muerto y deuda técnica para lograr una arquitectura limpia.
 
 ## Estructura de Entregables
 
